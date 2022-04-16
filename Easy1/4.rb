@@ -35,9 +35,9 @@ vehicles = [
 
 def count_occurences(vehicles)
   results = {}
-  vehicles.each do 
-    |vehicle| results [] += 1
-  results.map{ |key, value| "#{key}==>#{value}"}
+  vehicles.each do |vehicle| 
+    results [] += 1
+    results.map{ |key, value| "#{key}==>#{value}"}
   end
 end
 
