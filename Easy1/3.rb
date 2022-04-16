@@ -3,15 +3,20 @@
 
   
 
-def digit_list(i)
-   i.digits.reverse
+# def digit_list(i)
+#    i.digits.reverse
+# end
+
+# # or _____________________________________________________________________________
+
+# def digit_list(number)
+#   number.to_s.chars.map(&:to_i)
+# end
+
+def digit_list(number) do 
+  number.to_s.chars.map { |char| char.to_i}
 end
 
-# or _____________________________________________________________________________
-
-def digit_list(number)
-  number.to_s.chars.map(&:to_i)
-end
 
 
 p digit_list(12345) == [1, 2, 3, 4, 5]     # => true
