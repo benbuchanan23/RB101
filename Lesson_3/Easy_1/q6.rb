@@ -10,4 +10,4 @@ famous_words.prepend("Four score and ")
 puts famous_words
 
 # Example 2
-p "Four score and " << famous_words
+puts "Four score and " << famous_words

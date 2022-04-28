@@ -9,11 +9,9 @@ advice = "Few things in life are as important as house training your pet dinosau
 ##  Will return original string (non-mutating)!
 
 #1:
-# advice.slice!(advice.index("Few"), advice.index("house")) 
-
-# p advice
+advice.slice!(advice.index("Few"), advice.index("house")) 
+p advice
 
 #2: 
 advice.slice!(0, advice.index("house"))
-
 p advice
