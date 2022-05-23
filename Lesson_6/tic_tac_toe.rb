@@ -66,6 +66,42 @@ def someone_won?(board)
   !!detect_winner(board)
 end
 
+def keep_score(player_scorecard, computer_scorecard, board)
+  player_score = [] 
+  computer_score = []
+    if detect_winner(board) == 'Player' 
+      player_scorecard += 1 
+      player_score << 1
+    elsif detect_winner(board) == 'Computer'
+      computer_scorecard += 1 
+      computer_score << 1
+    else
+      puts "No change in score" 
+    end
+  puts "Player: #{player_score.size}; Computer: #{computer_score.size}" 
+end
+
+# def score_board(player_scorecard, computer_scorecard)
+#   player_score = [] 
+#   computer_score = []
+#    if player_scorecard == 1
+#     player_score << 1
+#    elsif computer_scorecard == 1
+#     computer_score <<1
+#    end
+#    p "Player: #{player_score.size}; Computer: #{computer_score.size}" 
+# end
+
+def grand_champion(player_scorecard, computer_scorecard)
+  if computer_scorecard > 3
+    puts "Computer is Grand Champion." 
+  elsif player_scorecard > 3
+    puts "Player is Grand Champion." 
+else 
+  puts "a Champion is yet to be determined."
+  end
+end
+
 def detect_winner(board)
   WINNING_LINES.each do |line|
     # if board[line[0]] == PLAYER_MARKER &&
@@ -86,8 +122,11 @@ def detect_winner(board)
   nil
 end
 
+
 loop do
   board = initialize_board
+  player_scorecard = 0
+  computer_scorecard = 0 
 
   loop do
     display_board(board)
@@ -106,6 +145,10 @@ loop do
   else
     prompt "It's a tie!"
   end
+
+  keep_score(player_scorecard, computer_scorecard, board)
+  # score_board(player_scorecard, computer_scorecard)
+  grand_champion(player_scorecard, computer_scorecard)
 
   prompt "Play again? (y or n)"
   answer = gets.chomp
