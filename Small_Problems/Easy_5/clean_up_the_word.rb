@@ -17,27 +17,18 @@
 # - join array back to string
 
 # Code: 
-def cleanup(string) 
-  array = string.chars
-  new_array = array.map do |element|
-    if ('a'..'z').include?(element)
-      element
-    else
-      element.replace(' ')
-    end
+def cleanup(string)
+  array_2 = []
+
+  string.chars.select do |element|
+   if ('a'..'z').include?(element)
+    array_2 << element
+   else 
+    array_2 << ' ' unless array_2.last == ' '
+   end
   end
-  results = []
-  new_array.each_with_index do |element, index|
-    if element == ' ' && new_array[index + 1] == ' ' 
-      next
-    else
-      results << element
-    end
-  end
-  p results.join
+  p array_2.join
 end
-
-
 
 
 # Examples:

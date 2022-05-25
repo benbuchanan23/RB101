@@ -9,6 +9,19 @@ def multisum(integer)
   end
   new_array.sum
 end
+####################################################################
+def multisum(integer)
+  new_array = []
+  array = *(1..integer)
+  array.select do |element|
+    if element % 3 == 0
+      new_array.push(element) 
+    elsif element % 5 == 0
+    new_array.push(element) 
+    end
+  end
+  new_array.inject(:+)
+end
 
 # Examples
 p multisum(3) == 3

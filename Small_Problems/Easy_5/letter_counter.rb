@@ -27,16 +27,31 @@
 #  - create new array displaying sizes of each word to get keys
 #  - iterate through that array to find number of times each size appears to get values
 
+# def word_sizes(string) 
+#   array = string.split(' ')
+#   word_sizes = []
+#   words_and_sizes = {}
+
+#   array.each do |word|
+#     word_sizes.push(word.size)
+#   end
+  
+#   word_sizes. each do |integer|
+#     words_and_sizes[integer] =  word_sizes.count(integer) 
+#   end
+
+# words_and_sizes.sort.to_h 
+# end
+
+# Alternate
 def word_sizes(string) 
-  hash = {}
-  array = string.split(' ') 
-  array_2 = array.map do |element|
-    element.size
-  end 
-  array_2.each do |element|
-  hash[element] = array_2.count(element)
+  hash = Hash.new(0)
+
+  string.split.each do |word|
+    hash[word.size] += 1
   end
-  hash
+
+  hash 
 end
 
 

@@ -2,12 +2,17 @@
 #  Write a method that determines and returns the ASCII string value of a string that is passed in as an argument. The ASCII string value is the sum of the ASCII values of every character in the string. (You may use String#ord to determine the ASCII value of a character.)
 
 def ascii_value(string)
-  new_array = string.delete(' ').chars
-  third_array = new_array.map do |letter|
-   letter.ord
-  end
-  third_array.sum
+  sum = 0 
+  string.chars.each { |element| sum += element.ord }
+  sum
 end
+  
+# or 
+# def ascii_value(string)
+#   sum = 0
+#   string.each_char { |char| sum += char.ord }
+#   sum
+# end
 
 
 p ascii_value('Four score') == 984

@@ -8,6 +8,19 @@ def running_total(array)
   end
 end
 
+#######################################################################
+def running_total(array)
+  new_array = []
+  sum = 0 
+  
+  array.each do |element|
+    sum += element
+    new_array.push(sum)
+  end
+  p new_array
+end
+############################################################################
+
 
 # Examples:
 p running_total([2, 5, 13]) == [2, 7, 20]

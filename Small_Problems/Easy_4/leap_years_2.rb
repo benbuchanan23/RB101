@@ -35,6 +35,20 @@ def julian_leap_year?(integer)
   end
 end
 
+############################################################################
+#  Julian
+def leap_year?(year)
+  if year.to_f < 1752 && year % 4 == 0 
+    true
+  elsif
+  (year % 400 == 0) || (year % 100 != 0 && year % 4 == 0 )
+    true
+  else
+    false
+  end
+end
+#############################################################################
+
 p julian_leap_year?(2016) == true
 p julian_leap_year?(2015) == false
 p julian_leap_year?(2100) == false

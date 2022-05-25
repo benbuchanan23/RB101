@@ -5,7 +5,8 @@ ALPHA = ('a'..'z').to_a + ('A'..'Z').to_a
 def word_sizes(string) 
   hash = {}
   array = string.split(' ') 
-  p array
+  
+  
   array_2 = array.map do |element|
     element.size
   end 
