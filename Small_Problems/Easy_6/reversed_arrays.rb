@@ -4,17 +4,16 @@
 # You may not use Array#reverse or Array#reverse!.
 list = [1, 2, 3, 4]
 
-def reverse!(array) 
-  first = 0 
-  last = -1
-  
-while first < (array.size / 2)
-  array[first], array[last] = array[last], array[first]
-  first += 1
-  last -= 1
+def reverse!(array)
+  count_up = 0
+  count_down = -1
+  loop do 
+    array[count_up], array[count_down] = array[count_down], array[count_up]
+    count_up += 1
+    count_down -= 1
+    break if count_up >= ((array.size / 2).floor)
   end
-
-  array
+  p array
 end
 
 # Examples:

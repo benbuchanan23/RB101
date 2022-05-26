@@ -22,27 +22,17 @@
 
 
 #CODE: 
-# def fibonacci_start(integer_1, integer_2)
-#   p fib_array = [integer_1, integer_2]
-# end
-# fibonacci_start(1, 1)
-
-def find_fibonacci_index_by_length(integer)
-  first = 1 
-  second = 1
-  index = 2
-
+def find_fibonacci_index_by_length(number)
+  array = [1, 1]
+  current_index = 1
   loop do 
-    index += 1
-    fibonacci = first + second
-    break if fibonacci.to_s.size >= integer
-
-    first = second
-    second = fibonacci
+    current_index +=1 
+    current_index_sum = array[-1] + array[-2]
+    array << current_index_sum
+    break if current_index_sum.to_s.length >= (number)
   end
-
-  index
-end
+  array.size
+end 
 
 # Examples:
 p find_fibonacci_index_by_length(2) == 7          # 1 1 2 3 5 8 13
