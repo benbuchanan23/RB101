@@ -1,15 +1,31 @@
 #  Rock, Paper, Scissors Game
 
-VALID_CHOICES = ['rock', 'paper', 'scissors']
+VALID_CHOICES = %w(rock paper scissors)
 
 def prompt(message)
   puts "=> #{message}"
 end
 
+def win?(first, second)
+  first == 'rock' && second == 'scissors' ||
+    first == 'scissors' && second == 'paper' ||
+    first == 'paper' && second == 'rock'
+end
+
+def display_results(player, computer)
+  if win?(player, computer)
+    prompt "You Win!"
+  elsif win?(computer, player)
+    prompt "You Lose!"
+  else
+    prompt "It's a Tie!"
+  end
+end
+
 loop do
   choice = ''
   loop do
-    prompt "Choose one: #{VALID_CHOICES.join(', ')}"
+    prompt "Choose One: #{VALID_CHOICES.join(', ')}"
     choice = gets.chomp
 
     if VALID_CHOICES.include?(choice)
@@ -23,17 +39,7 @@ loop do
 
   prompt "You chose #{choice}, computer chose #{computer_choice}"
 
-  if choice == 'rock' && computer_choice == 'scissors'
-    choice == 'scissors' && computer_choice == 'paper'
-    choice == 'paper' && computer_choice == 'rock'
-    prompt "You Win!"
-  elsif choice == 'rock' && computer_choice == 'paper'
-    choice == 'scissors' && computer_choice == 'rock'
-    choice == 'paper' && computer_choice == 'scissors'
-    prompt "You Lose!"
-  else
-    prompt "It's a Tie!"
-  end
+  display_results(choice, computer_choice)
 
   prompt "Do you want to play again?"
   answer = gets.chomp

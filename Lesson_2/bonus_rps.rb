@@ -6,13 +6,18 @@ def prompt(message)
   puts "=> #{message}"
 end
 
-WINNING_COMBOS = {
-  'rock' => ["scissors", "lizard"],
-  'paper' => ["spock", "rock"],
-  'scissors' => ["paper", "lizard"],
-  'lizard' => ["spock", "paper"],
-  'spock' => ["scissors", "rock"]
-}
+def win?(first, second)
+  first == 'rock' && second == 'scissors' ||
+    first == 'rock' && second == 'lizard' ||
+    first == 'scissors' && second == 'paper' ||
+    first == 'scissors' && second == 'lizard' ||
+    first == 'paper' && second == 'rock' ||
+    first == 'paper' && second == 'spock' ||
+    first == 'lizard' && second == 'spock' ||
+    first == 'lizard' && second == 'paper' ||
+    first == 'spock' && second == 'scissors' ||
+    first == 'spock' && second == 'rock'
+end
 
 SCORE = {
   player_score: 0,
@@ -41,21 +46,11 @@ def reset_score
   SCORE[:computer_score] = 0
 end
 
-def win?(choice, computer_choice)
-  if WINNING_COMBOS[choice].include?(computer_choice)
-    'player'
-  elsif WINNING_COMBOS[computer_choice].include?(choice)
-    'computer'
-  else
-    'tie'
-  end
-end
-
-def display_results(choice, computer_choice)
-  if win?(choice, computer_choice) == 'player'
+def display_results(player, computer)
+  if win?(player, computer)
     prompt "You Win!"
     score_update_player
-  elsif win?(choice, computer_choice) == 'computer'
+  elsif win?(computer, player)
     prompt "You Lose!"
     score_update_computer
   else

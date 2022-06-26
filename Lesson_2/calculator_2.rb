@@ -95,4 +95,4 @@ What operation would you like to perform?
   break unless answer.downcase.start_with?('y')
 end
 
-prompt "#{name}, Congratulations! You have successfully exited the Machine!"
+prompt "#{name}, Thanks for playing, please come again!"

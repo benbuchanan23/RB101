@@ -3,7 +3,7 @@ def prompt(message)
 end
 
 def integer?(input)
-  input.to_i.to_s == input 
+  input.to_i.to_s == input
 end
 
 def float?(input)
@@ -95,10 +95,7 @@ What operation would you like to perform?
            when '4'
              number1.to_f / number2.to_f
            end
-           puts "...Computing, please wait!"
-
-           result
-          
+  puts "...Computing, please wait!"
 
   prompt "#{name} your result is #{result}"
 
@@ -107,4 +104,4 @@ What operation would you like to perform?
   break unless answer.downcase.start_with?('y')
 end
 
-prompt "#{name}, Congratulations! You have successfully navigated through the Machine!"
+prompt "#{name}, Congratulations! Please play again!"
