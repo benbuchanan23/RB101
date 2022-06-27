@@ -9,11 +9,17 @@ flintstones = %w(Fred Barney Wilma Betty BamBam Pebbles)
 
 #1: 
 p flintstones.concat(["Dino", "Hoppy"])
+# or 
+p flintstones.concat(%W(Dino Hoppy))
 
 #2: 
 p flintstones.push(["Dino", "Hoppy"])
 p flintstones.flatten! 
+# or 
+p flintstones.push("Dino").push("Hoppy")
 
 #3: 
 p flintstones << "Dino" 
 p flintstones << "Hoppy"
+# or 
+p flintstones << "Dino" << "Hoppy" 

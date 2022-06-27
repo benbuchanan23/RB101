@@ -1,4 +1,4 @@
-#  Question 8  #############################################################
+#  Question 8  
 #  Shorten the following sentence:
 
 advice = "Few things in life are as important as house training your pet dinosaur."
@@ -14,4 +14,8 @@ p advice
 
 #2: 
 advice.slice!(0, advice.index("house"))
+p advice
+
+#3: 
+advice.slice!(0, 39)
 p advice
