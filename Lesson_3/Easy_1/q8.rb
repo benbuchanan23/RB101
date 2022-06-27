@@ -5,6 +5,4 @@ flintstones = { "Fred" => 0, "Wilma" => 1, "Barney" => 2, "Betty" => 3, "BamBam"
 
 #  Turn this into an array containing only two elements: Barney's name and Barney's number
 
-flint_array = flintstones.to_a
-p flint_array
-p flint_array.assoc("Barney")
+p flintstones.assoc("Barney")

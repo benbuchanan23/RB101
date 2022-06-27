@@ -7,8 +7,9 @@ numbers = [1, 2, 3, 4, 5]
 
   numbers = [1, 2, 3, 4, 5]
   numbers.delete_at(1)              # ==> deletes integer at index 1 which is "2"
-  p numbers
+  p numbers                         # ==> returns the deleted item
 
   numbers = [1, 2, 3, 4, 5]
   numbers.delete(1)                 # ==> deletes the integer "1" 
-  p numbers
+  p numbers                         # ==> returns the deleted item
+  
