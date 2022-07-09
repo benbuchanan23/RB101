@@ -1,4 +1,4 @@
-#  Arithmetic Integer
+###  Arithmetic Integer  ###
 # Write a program that prompts the user for two positive integers, and then prints the results of the following operations on those two numbers: addition, subtraction, product, quotient, remainder, and power. Do not worry about validating the input.
 
 puts "Enter the first number." 
@@ -20,6 +20,25 @@ puts "a * b = #{product}"
 puts "a / b = #{quotient}" 
 puts "a % b = #{remainder}" 
 puts "a ** b = #{power}"
+
+# or 
+
+def prompt(msg)
+  puts "==> #{msg}" 
+end
+
+prompt "Enter the first number: " 
+first = gets.chomp.to_i 
+
+prompt "Enter the second number: " 
+second = gets.chomp.to_i 
+
+prompt "#{first} + #{second} = #{first + second}"  
+prompt "#{first} - #{second} = #{first - second}" 
+prompt "#{first} * #{second} = #{first * second}"  
+prompt "#{first} / #{second} = #{first / second}" 
+prompt "#{first} % #{second} = #{first % second}" 
+prompt "#{first} ** #{second} = #{first ** second}" 
 
 
 # Example

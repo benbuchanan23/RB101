@@ -9,6 +9,5 @@ def square(number)
   multiply(number, number)
 end
 
-# Example:
 p square(5) == 25
 p square(-8) == 64

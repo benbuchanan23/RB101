@@ -1,11 +1,16 @@
-#  Palindromic Numbers
+###   Palindromic Numbers  ###
 #  Write a method that returns true if its integer argument is palindromic, false otherwise. A palindromic number reads the same forwards and backwards.
 
 def palindromic_number?(integer)
 integer.to_s == integer.to_s.reverse
 end
 
-# Examples:
+# or 
+
+def palindromic_number?(integer)
+  integer.digits == integer.digits.reverse! ? true : false
+end
+
 p palindromic_number?(34543) == true
 p palindromic_number?(123210) == false
 p palindromic_number?(22) == true
